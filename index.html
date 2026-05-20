@@ -6,32 +6,54 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial;
-            background-color: #eef3f7;
+            font-family: 'Segoe UI', Tahoma;
+            background: #eef3f7;
         }
 
+        /* NAVBAR */
         .navbar {
-            background-color: #2b6777;
-            padding: 15px;
+            background: #2b6777;
+            padding: 15px 30px;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
         }
 
-        .navbar a {
+        .nav-links a {
+            margin: 0 10px;
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
         }
 
-        .section {
-            padding: 40px;
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #52ab98, #2b6777);
+            color: white;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        h1 {
+        .hero h1 {
+            margin-bottom: 10px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h2 {
             color: #2b6777;
         }
 
+        /* CARDS */
         .card-container {
             display: flex;
             justify-content: center;
@@ -40,11 +62,16 @@
 
         .card {
             background: white;
-            width: 270px;
+            width: 260px;
             margin: 15px;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card a {
@@ -57,8 +84,25 @@
             text-decoration: none;
         }
 
-        .card a:hover {
-            background: #3d8b7d;
+        /* STAFF */
+        .staff img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .role {
+            color: gray;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #2b6777;
+            color: white;
+            padding: 15px;
+            text-align: center;
         }
 
     </style>
@@ -68,15 +112,114 @@
 
 <!-- NAVBAR -->
 <div class="navbar">
-    #homeHome</a>
-    #directoryPatients</a>
-    #articlesArticles</a>
-    #staffStaff</a>
-    #rulesRules</a>
+    Sanctum Care
+    <div class="nav-links">
+        #homeHome</a>
+        #articlesArticles</a>
+        #staffStaff</a>
+        #rulesRules</a>
+    </div>
 </div>
 
-<!-- HOME -->
-<div class="section" id="home">
-    <h1>Welcome to Sanctum</h1>
-    <p>This dashboard will guide you through your journey of recovery.</p>
+<!-- HERO -->
+<div class="hero" id="home">
+    <h1>Welcome to Your Recovery Journey</h1>
+    <p>You are safe. You are supported. One step at a time.</p>
+</div>
 
+<!-- ONBOARDING -->
+<div class="section">
+    <h2>Start Here</h2>
+    <p>Follow these steps to begin:</p>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Step 1</h3>
+            <p>Understand the rules</p>
+            rules.pdfView Rules</a>
+        </div>
+
+        <div class="card">
+            <h3>Step 2</h3>
+            <p>Meet our team</p>
+            #staffGo to Staff</a>
+        </div>
+
+        <div class="card">
+            <h3>Step 3</h3>
+            <p>Learn about recovery</p>
+            #articlesExplore</a>
+        </div>
+    </div>
+</div>
+
+<!-- ARTICLES -->
+<div class="section" id="articles">
+    <h2>Understanding Addiction</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>What is Addiction?</h3>
+            <p>Learn how addiction works mentally and physically.</p>
+            https://www.google.comRead</a>
+        </div>
+
+        <div class="card">
+            <h3>Relapse Prevention</h3>
+            <p>Understand triggers and coping methods.</p>
+            https://www.google.comRead</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- STAFF -->
+<div class="section" id="staff">
+    <h2>Meet Your Support Team</h2>
+
+    <div class="card-container">
+
+        <div class="card staff">
+            <img src="doctor.jpg">
+            <h3>Dr. Sharma</h3>
+            <p class="role">Medical Support</p>
+            <p>For physical health and medication</p>
+        </div>
+
+        <div class="card staff">
+            <img src="counsellor.jpg">
+            <h3>Meera</h3>
+            <p class="role">Counsellor</p>
+            <p>For emotional support and therapy</p>
+        </div>
+
+        <div class="card staff">
+            <img src="manager.jpg">
+            <h3>Rahul</h3>
+            <p class="role">Operations</p>
+            <p>For daily issues and coordination</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- RULES -->
+<div class="section" id="rules">
+    <h2>Rules & Guidelines</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>View Guidelines</h3>
+            rules.pdfOpen Rules Document</a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    Sanctum Recovery Center © 2026
+</div>
+
+</body>
+</html>
