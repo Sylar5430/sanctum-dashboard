@@ -1,55 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sanctum Dashboard</title>
+    <title>Sanctum Recovery Portal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma;
+            font-family: 'Segoe UI', sans-serif;
             background: #eef3f7;
         }
 
         /* NAVBAR */
         .navbar {
             background: #2b6777;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
         }
 
-        .nav-links a {
-            margin: 0 10px;
+        .navbar a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, #52ab98, #2b6777);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            margin-bottom: 10px;
-        }
-
-        /* SECTION */
+        /* SECTIONS (APP STYLE) */
         .section {
-            padding: 50px 20px;
+            display: none;
+            padding: 30px;
             text-align: center;
         }
 
-        h2 {
+        .active {
+            display: block;
+        }
+
+        h1, h2 {
             color: #2b6777;
         }
 
@@ -65,23 +55,22 @@
             width: 260px;
             margin: 15px;
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
+            border-radius: 12px;
+            box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
         }
 
         .card a {
             display: block;
             margin-top: 10px;
+            padding: 10px;
             background: #52ab98;
             color: white;
-            padding: 10px;
             border-radius: 6px;
             text-decoration: none;
+        }
+
+        .card a:hover {
+            background: #3d8b7d;
         }
 
         /* STAFF */
@@ -89,136 +78,170 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .role {
-            color: gray;
-            font-size: 14px;
-        }
-
-        /* FOOTER */
-        .footer {
-            background: #2b6777;
-            color: white;
-            padding: 15px;
-            text-align: center;
         }
 
     </style>
+
+    <script>
+        function showSection(id) {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        window.onload = function() {
+            showSection('home');
+        }
+    </script>
+
 </head>
 
 <body>
+    <script>
+let password = prompt("Enter access password:");
+
+if (password !== "gratitude") {
+    document.body.innerHTML = `
+        <div style="font-family: Arial; text-align:center; margin-top:100px;">
+            <h1>Access Restricted</h1>
+            <p>Please contact staff for access.</p>
+        </div>
+    `;
+}
+</script>
+
 
 <!-- NAVBAR -->
 <div class="navbar">
-    Sanctum Care
-    <div class="nav-links">
-        #homeHome</a>
-        #articlesArticles</a>
-        #staffStaff</a>
-        #rulesRules</a>
-    </div>
+    Home
+    Facilities
+    Contact
+    Staff
+    Rules
+    Resources
 </div>
 
-<!-- HERO -->
-<div class="hero" id="home">
-    <h1>Welcome to Your Recovery Journey</h1>
-    <p>You are safe. You are supported. One step at a time.</p>
-</div>
-
-<!-- ONBOARDING -->
-<div class="section">
-    <h2>Start Here</h2>
-    <p>Follow these steps to begin:</p>
+<!-- HOME -->
+<div id="home" class="section">
+    <h1>Welcome to Sanctum</h1>
+    <p>Your recovery journey starts here.</p>
+    <p>You are safe. You are supported. Take one step at a time.</p>
 
     <div class="card-container">
         <div class="card">
-            <h3>Step 1</h3>
-            <p>Understand the rules</p>
-            rules.pdfView Rules</a>
-        </div>
-
-        <div class="card">
-            <h3>Step 2</h3>
-            <p>Meet our team</p>
-            #staffGo to Staff</a>
-        </div>
-
-        <div class="card">
-            <h3>Step 3</h3>
-            <p>Learn about recovery</p>
-            #articlesExplore</a>
+            <h3>Start Here</h3>
+            <p>Begin by understanding how the center works.</p>
+            Facilities</a>
         </div>
     </div>
 </div>
 
-<!-- ARTICLES -->
-<div class="section" id="articles">
-    <h2>Understanding Addiction</h2>
+<!-- FACILITIES -->
+<div id="facilities" class="section">
+    <h2>How Things Work</h2>
 
     <div class="card-container">
-
         <div class="card">
-            <h3>What is Addiction?</h3>
-            <p>Learn how addiction works mentally and physically.</p>
-            https://www.google.comRead</a>
+            <h3>Daily Routine</h3>
+            <p>Follow your assigned daily schedule and activities.</p>
         </div>
 
         <div class="card">
-            <h3>Relapse Prevention</h3>
-            <p>Understand triggers and coping methods.</p>
-            https://www.google.comRead</a>
+            <h3>Need Help?</h3>
+            <p>If you feel uncomfortable, immediately reach out to staff.</p>
         </div>
 
+        <div class="card">
+            <h3>Where to Go</h3>
+            <p>Common areas, therapy rooms, and support zones are available.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+    <h2>Who to Contact</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Medical Support</h3>
+            <p>Contact doctor for physical health concerns.</p>
+        </div>
+
+        <div class="card">
+            <h3>Counselling</h3>
+            <p>Speak to counsellors for emotional support.</p>
+        </div>
+
+        <div class="card">
+            <h3>Daily Issues</h3>
+            <p>Reach operations staff for routine concerns.</p>
+        </div>
     </div>
 </div>
 
 <!-- STAFF -->
-<div class="section" id="staff">
-    <h2>Meet Your Support Team</h2>
+<div id="staff" class="section">
+    <h2>Meet the Staff</h2>
 
     <div class="card-container">
 
         <div class="card staff">
             <img src="doctor.jpg">
             <h3>Dr. Sharma</h3>
-            <p class="role">Medical Support</p>
-            <p>For physical health and medication</p>
+            <p>Medical Support</p>
+            <p>Handles health and medication needs</p>
         </div>
 
         <div class="card staff">
             <img src="counsellor.jpg">
             <h3>Meera</h3>
-            <p class="role">Counsellor</p>
-            <p>For emotional support and therapy</p>
+            <p>Counsellor</p>
+            <p>Helps with emotional and mental support</p>
         </div>
 
         <div class="card staff">
             <img src="manager.jpg">
             <h3>Rahul</h3>
-            <p class="role">Operations</p>
-            <p>For daily issues and coordination</p>
+            <p>Operations</p>
+            <p>Manages day-to-day activities</p>
         </div>
 
     </div>
 </div>
 
 <!-- RULES -->
-<div class="section" id="rules">
+<div id="rules" class="section">
     <h2>Rules & Guidelines</h2>
 
     <div class="card-container">
         <div class="card">
-            <h3>View Guidelines</h3>
-            rules.pdfOpen Rules Document</a>
+            <p>Respect all staff and patients</p>
+            <p>Follow daily schedule</p>
+            <p>Report any discomfort</p>
+
+            rules.pdfView Full Rules</a>
         </div>
     </div>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-    Sanctum Recovery Center © 2026
+<!-- RESOURCES -->
+<div id="resources" class="section">
+    <h2>Addiction Resources</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Understanding Addiction</h3>
+            <p>Learn the basics of addiction and recovery.</p>
+        </div>
+
+        <div class="card">
+            <h3>Recovery Guide</h3>
+            addiction.pdfRead Full Guide</a>
+        </div>
+
+    </div>
 </div>
 
 </body>
